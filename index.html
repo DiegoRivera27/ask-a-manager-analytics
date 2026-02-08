@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Análisis de Salarios </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      background: #f9f9f9;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    section {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+    }
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Ask A Manager – Salary Survey Analytics</h1>
+<p>
+Este sitio documenta el proceso de limpieza, modelado y visualización de la base de datos
+<strong>Ask A Manager Salary Survey 2021</strong>.  
+El objetivo es generar insumos analíticos para un equipo de trabajo interno.
+</p>
+
+<section>
+  <h2>📊 Dashboard</h2>
+  <p>
+    El siguiente dashboard presenta un resumen de los salarios convertidos a pesos colombianos (COP),
+    incluyendo distribución geográfica, relación entre industria y salario, y métricas agregadas.
+  </p>
+
+  <!-- REEMPLAZA EL SRC CON TU LINK DE LOOKER -->
+  <iframe 
+    src="https://lookerstudio.google.com/reporting/8adf0574-0452-4ac7-b0e3-4446307631a4">
+  </iframe>
+</section>
+
+<section>
+  <h2>🧹 Modelado de Datos</h2>
+
+  <h3>Variables originales</h3>
+  <ul>
+    <li><strong>Annual Salary</strong>: Salario anual reportado libremente por la persona encuestada.</li>
+    <li><strong>Country</strong>: País de residencia.</li>
+    <li><strong>City</strong>: Ciudad declarada.</li>
+    <li><strong>Industry</strong>: Industria laboral.</li>
+  </ul>
+
+  <h3>Variables modeladas</h3>
+  <ul>
+    <li><strong>Salario_anual_COP</strong>: Salario anual convertido a pesos colombianos.</li>
+    <li><strong>Compensaciones_COP</strong>: Bonos y compensaciones convertidas a COP.</li>
+    <li><strong>Salario_total_COP</strong>: Suma de salario anual y compensaciones en COP.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🔁 Procedimiento de actualización</h2>
+  <ol>
+    <li>Descargar la versión actualizada del Google Sheets en formato CSV.</li>
+    <li>Limpiar campos de país y ciudad para homogenizar nombres.</li>
+    <li>Normalizar el campo <code>Annual Salary</code> convirtiéndolo a valor numérico anual.</li>
+    <li>Aplicar la TRM del día para convertir salarios a COP.</li>
+    <li>Crear los campos calculados de salario total.</li>
+    <li>Actualizar la fuente de datos en Looker Studio.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>📌 Créditos</h2>
+  <p>
+    Fuente de datos: AskAManager.org – Salary Survey 2021<br>
+    TRM utilizada: <strong>indicar valor y fecha</strong><br>
+    Elaborado por: <strong>Tu nombre</strong>
+  </p>
+</section>
+
+</body>
+</html>
